@@ -13,10 +13,21 @@ function success(item) {
 }
 
 function fail(item) {
+  
+  if(item.enhancement<15){
+    item.durability-=5
+  
+  }
+  else {
+    item.durability-=10
+    
+    if(item.enhancement>16){
+      item.enhancement--
+    }
+  }
   return { ...item };
 }
 
-// - a `repair(item)` method that accepts an `item` object and **returns a new item** with the durability restored to 100. This method is the simplest of the three and would be a **good starting point** on this project.
 
 function repair(item) {
   return { ...item, durability: 100 };

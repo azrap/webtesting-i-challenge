@@ -1,12 +1,15 @@
 module.exports = {
-  succeed,
+  success,
   fail,
   repair,
   get,
 };
 
-function succeed(item) {
-  return { ...item };
+function success(item) {
+  if(item.enhancement<20){
+    item.enhancement++
+  }
+  return { ...item};
 }
 
 function fail(item) {

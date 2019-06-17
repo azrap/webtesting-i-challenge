@@ -1,6 +1,8 @@
 const enhancer = require('./enhancer.js');
 // test away!
 
+console.log(enhancer)
+
 describe('enhancer.js', () => {
   describe('repair()', () => {
     it('restores durability to 100', () => {
@@ -12,8 +14,9 @@ describe('enhancer.js', () => {
   });
 
   describe('success()', () => {
-    it('restores', ()=>{
-      expect().toBe()
+    it('adds 1 to the enhancement', ()=>{
+      expect(enhancer.success({enhancement:18}).enhancement).toBe(19)
+      expect(enhancer.success({durability:18}).durability).toBe(18)
     })
 
 
